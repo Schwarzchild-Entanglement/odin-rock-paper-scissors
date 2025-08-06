@@ -63,9 +63,6 @@ for (let i = 0; i < 5; i++) {
 }   
 }
 
-console.log(computerScore);
-console.log(humanScore);
-
 playGame();
 if (humanScore > computerScore)
     alert("You win!");
@@ -73,4 +70,7 @@ else if (computerScore > humanScore)
     alert("You lose");
 else if (computerScore = humanScore)
     alert("Nobody wins");
+
+console.log(humanScore);
+console.log(computerScore);
 
