@@ -1,3 +1,7 @@
+
+let computerScore = 0;
+let humanScore = 0;
+
 function getComputerChoice () {
     let ComputerChoice;
     let number = Math.random();
@@ -16,10 +20,8 @@ function getHumanChoice () {
     return humanChoice;
 }
 
-let humanScore = 0;
-let computerScore = 0;
-
-function playRound(humanChoice, computerChoice) {
+function playGame() {
+    function playRound(humanChoice, computerChoice) {
     if (humanChoice == "rock" && computerChoice == "scissors") {
         console.log("You win! rock beats scissors");
         humanScore++;
@@ -45,7 +47,7 @@ function playRound(humanChoice, computerChoice) {
         console.log("Nobody wins!");
     }
     else if (humanChoice == "paper" && computerChoice == "rock") {
-        console.log("You win! paoer beats rock");
+        console.log("You win! paper beats rock");
         humanScore++;
     }
     else if (humanChoice == "scissors" && computerChoice == "rock") {
@@ -54,10 +56,20 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+for (let i = 0; i < 5; i++) {
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+}   
+}
 
-playRound(humanSelection, computerSelection);
+playGame();
+if (humanScore > computerScore)
+    alert("You win!");
+else if (computerScore > humanScore)
+    alert("You lose");
+else if (computerScore = humanScore)
+    alert("Nobody wins")
 
-alert(humanScore);
-alert(computerScore);
+console.log(computerScore);
+console.log(humanScore);
